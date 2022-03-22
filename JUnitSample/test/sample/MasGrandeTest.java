@@ -28,7 +28,7 @@ public class MasGrandeTest {
     }
 
     /**
-     * Test of max method, of class MasGrande.
+     * Tests of max method, of class MasGrande.
      */
     @Test
     public void testMax() {
@@ -54,10 +54,9 @@ public class MasGrandeTest {
         assertEquals(expResult, result);
     }
     
-    //Este devuelve siempre 0 en lugar de el resultado esperado
     @Test
     public void testMaxSingleNumberArray() {
-        System.out.println("Prueba Max sol un numero");
+        System.out.println("Prueba Max solo un numero");
         int[] a = new int[1];
         a[0] = 3;
         int expResult = 3;
@@ -78,7 +77,7 @@ public class MasGrandeTest {
         assertEquals(expResult, result);
     }
     
-    @Test
+    @Test (expected = java.lang.ArrayIndexOutOfBoundsException.class)
     public void testMaxEmpty() {
         System.out.println("Prueba Max vacio");
         int[] a = new int[0];
@@ -87,8 +86,7 @@ public class MasGrandeTest {
         assertEquals(expResult, result);
     }
     
-    //TODO: No se que hacer con esto, que resultado deberiamos esperar si no un fallo sobre el sistema? creo control de errores??
-    @Test
+    @Test (expected = java.lang.NullPointerException.class)
     public void testMaxNull() {
         System.out.println("Prueba Max array null");
         int[] a = null;

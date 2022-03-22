@@ -11,12 +11,22 @@ package sample;
  */
 public class MasGrande {
     public static int max(int[] a){
-        int i, m = 0;
-        for (i = 1; i < a.length; i++) {
-            if (a[i] > m) {
-                m = a[i];
-            }
+        int m = a[0];
+        int i = 0;
+        
+        //Informa del error si el array es null o esta vacio
+        if (a == null || a.length < 0){
+             System.out.println("Error: se deben introducir números");
+             return m;
         }
-        return m;
+        
+        else{
+            for (i = 0; i < a.length; i++) {
+                if (a[i] > m) {
+                    m = a[i];
+                }
+            }
+            return m;
+        }
     }
 }
